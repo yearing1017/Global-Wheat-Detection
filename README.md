@@ -16,3 +16,8 @@
 - test.zip文件（10张测试图像)，如下截图所示：
 
 ![test.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/test.png)
+
+
+## 解决方案
+
+### 方案1：基于Faster-RCNN的识别
