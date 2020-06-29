@@ -121,7 +121,7 @@ def train(epoch=200):
             with open('log/logs_frc_0629.txt', 'a') as f :
                 f.write(line_3)
                 f.write('\r\n')
-            torch.save(model.state_dict(), f'fasterrcnn_epo{epo}_fpn.pth')
+            torch.save(model.state_dict(), 'models_frc_0629/frc_0629_{}.pth'.format(epo))
             valid_pred_min = valid_prec
         line_4 = f"Epoch #{epo} train_loss: {loss_hist.value}"
         print(f"Epoch #{epo} train_loss: {loss_hist.value}")
