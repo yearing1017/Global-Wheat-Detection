@@ -112,7 +112,7 @@ def train(epoch=200):
             f.write(line_2)
             f.write('\r\n')
 
-        # 判断是否为更优的模型
+        # 保存更优的模型
         if valid_prec >= valid_pred_min:
             line_3 = 'Validation precision increased({:.6f} --> {:.6f}).  Saving model ...'.format(valid_pred_min, valid_prec)
             print('Validation precision increased({:.6f} --> {:.6f}).  Saving model ...'.format(
