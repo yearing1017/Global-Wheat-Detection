@@ -20,4 +20,10 @@
 
 ## 解决方案
 
-### 方案1：基于Faster-RCNN的识别
+### 方案1：[基于Faster-RCNN的识别]()
+
+#### 1. 代码简介
+- csv_remake.py： 
+- WheatData.py：
+- evaluate.py：
+- train.py：
