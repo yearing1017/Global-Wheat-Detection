@@ -23,7 +23,8 @@
 ### 方案1：[基于Faster-RCNN的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-%231)
 
 #### 1. 代码简介
-- csv_remake.py： 
-- WheatData.py：
-- evaluate.py：
-- train.py：
+- csv_remake.py：调整给的csv文件并返回train_df和valid_df文件
+- WheatData.py：通过df文件载入image和targets，目标检测的数据集载入可参考issue
+- evaluate.py：计算Iou和Map等指标
+- train.py：模型载入和训练代码
+
