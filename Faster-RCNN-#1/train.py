@@ -44,8 +44,9 @@ def train(epoch=200):
 
     model.to(device)
     params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.Adam(params, lr=1e-3)
-    #optimizer = torch.optim.SGD(params, lr=0.005, momentum=0.9, weight_decay=0.0005)
+    #尝试使用Adam损失函数，但是训练到epoch40左右iou值就降低到很低，异常
+    #optimizer = torch.optim.Adam(params, lr=1e-3)
+    optimizer = torch.optim.SGD(params, lr=0.005, momentum=0.9, weight_decay=0.0005)
     lr_scheduler = None
 
     loss_hist = Averager()
