@@ -29,3 +29,7 @@
 - train.py：模型载入和训练代码
 - WheaTesttData.py：载入测试数据
 - predict.py：载入训练模型进行预测，保存画出矩形框的图像
+
+#### 2. 预测结果图示
+- 选取三种进行可视化描画矩形box，如下截图：
+![](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/Faster-RCNN-%231/predict_frc_0629/pre_1.jpg)
