@@ -27,4 +27,5 @@
 - WheatData.py：通过df文件载入image和targets，目标检测的数据集载入可参考issue
 - evaluate.py：计算Iou和Map等指标
 - train.py：模型载入和训练代码
-
+- WheaTesttData.py：载入测试数据
+- predict.py：载入训练模型进行预测，保存画出矩形框的图像
