@@ -32,11 +32,13 @@
 
 #### 2. 预测结果及问题
 - 选取三种进行可视化描画矩形box，如下截图：
+
 ![](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/Faster-RCNN-%231/predict_frc_0629/pre_1.jpg)
 
 - 发现问题：在服务器上预测结果如上图所示，图像颜色与原图不一致，且预测结果较差；
 - 在kaggle上预测的图像颜色正常，且相同模型预测结果较好，如下图所示：
+
 ![](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/Faster-RCNN-%231/predict_frc_0629/pre-2.png)
 
 - 问题：在自己服务器上运行相同程序，提示`Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).`
-- 目前未解决该问题，因为在kaggle上运行正确
+- 目前未解决该问题，但在kaggle上运行正确
