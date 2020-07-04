@@ -35,4 +35,4 @@
 ![](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/Faster-RCNN-%231/predict_frc_0629/pre_1.jpg)
 
 - 发现问题：在服务器上预测结果如上图所示，图像颜色与原图不一致，且预测结果较差；
-- 在kaggle上预测的图像就很正常，如下图所示：
+- 在kaggle上预测的图像颜色正常，且相同模型预测结果较好，如下图所示：
