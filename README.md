@@ -42,3 +42,8 @@
 
 - 问题：在自己服务器上运行相同程序，提示`Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).`
 - 目前未解决该问题，但在kaggle上运行正确
+- 得分：LB=0.6687
+
+### 方案2：[基于 Pseudo-Labeling策略训练Faster-RCNN](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-%231)
+
+#### 1.
