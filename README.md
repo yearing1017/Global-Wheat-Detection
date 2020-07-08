@@ -23,7 +23,7 @@
 ### 方案1：[基于Faster-RCNN的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-%231)
 
 #### 1. 代码简介
-- csv_remake.py：调整给的csv文件并返回train_df和valid_df文件
+- csv_remake.py：调整给的csv文件并返回train_df和valid_df
 - WheatData.py：通过df文件载入image和targets，目标检测的数据集载入可参考issue
 - evaluate.py：计算Iou和Map等指标
 - train.py：模型载入和训练代码
@@ -44,6 +44,19 @@
 - 目前未解决该问题，但在kaggle上运行正确
 - 得分：LB=0.6687
 
-### 方案2：[基于 Pseudo-Labeling策略训练Faster-RCNN](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-%231)
+### 方案2：[基于Pseudo-Labeling策略训练Faster-RCNN](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-PL-%232)
 
-#### 1.
+#### 1. 思路
+- 在方案一训练得到的模型基础上继续训练
+- Pseudo-Labeling策略：先利用已有模型得出测试集的predict结果
+- 筛选出置信度较高的pre结果和对应的image数据
+- 将上步骤得到的数据加入到训练数据集中，进行再度训练
+
+#### 2. 修改代码
+- csv_remake.py：concat新数据和之前的train数据，并返回train_df和valid_df文件
+- make_pl.py：根据已有模型得到Pseudo-Labeling数据
+- WheaTesttData_df.py：以samplesubmission.csv格式载入测试数据
+
+#### 3. 结果
+- 在方案一的模型基础上训练6个轮次
+- LB从0.6687提升到0.6914
