@@ -60,3 +60,5 @@
 #### 3. 结果
 - 在方案一的模型基础上训练6个轮次
 - LB从0.6687提升到0.6914
+
+### 方案3：[基于EfficientDet的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/EfficientDet-%233)
