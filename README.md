@@ -62,3 +62,5 @@
 - LB从0.6687提升到0.6914
 
 ### 方案3：[基于EfficientDet的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/EfficientDet-%233)
+
+- 论文地址：[EfﬁcientDet: Scalable and Efﬁcient Object Detection](https://arxiv.org/pdf/1911.09070.pdf)
