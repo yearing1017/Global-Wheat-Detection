@@ -64,5 +64,11 @@
 ### 方案3：[基于EfficientDet的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/EfficientDet-%233)
 
 - 论文地址：[EfﬁcientDet: Scalable and Efﬁcient Object Detection](https://arxiv.org/pdf/1911.09070.pdf)
-- Public LeaderBoard Score: 0.7506 | 106/1815 | top 6%
+
+- Public LeaderBoard Score: 0.7506  |  106/1815  |  top 6%
 ![pb_score.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/pb.png)
+
+- Private LeaderBoard Score: 0.6681 |   22/2245  |  top 1%
+![prb_score.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/prb.png)
+
+ 
