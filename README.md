@@ -9,11 +9,11 @@
 
 ### 比赛数据
 
-- train.zip文件（3422张训练集图像，部分无小麦头），如下截图所示：
+- train.zip文件（3422张训练集图像，部分无小麦头），如下图所示：
 
 ![train.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/train.png)
 
-- test.zip文件（10张测试图像)，如下截图所示：
+- test.zip文件（10张测试图像)，如下图所示：
 
 ![test.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/test.png)
 
