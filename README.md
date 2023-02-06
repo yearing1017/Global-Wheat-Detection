@@ -8,7 +8,7 @@
 - The [Global Wheat Head Dataset](http://www.global-wheat.com/2020-challenge/) is led by nine research institutes from seven countries: the University of Tokyo, Institut national de recherche pour l’agriculture, l’alimentation et l’environnement, Arvalis, ETHZ, University of Saskatchewan, University of Queensland, Nanjing Agricultural University, and Rothamsted Research. These institutions are joined by many in their pursuit of accurate wheat head detection, including the Global Institute for Food Security, DigitAg, Kubota, and Hiphen.
 
 ### 比赛数据
-
+- train.csv文件：每张训练图像中各个目标框的位置（bbox_xmin, bbox_ymin, bbox_width, bbox_height） 
 - train.zip文件（3422张训练集图像，部分无小麦头），如下图所示：
 
 ![train.png](https://github.com/yearing1017/Global-Wheat-Detection/blob/master/image/train.png)
@@ -23,12 +23,12 @@
 ### 方案1：[基于Faster-RCNN的识别](https://github.com/yearing1017/Global-Wheat-Detection/tree/master/Faster-RCNN-%231)
 
 #### 1. 代码简介
-- csv_remake.py：调整给的csv文件并返回train_df和valid_df
+- csv_remake.py：根据csv文件并返回train_df和valid_df
 - WheatData.py：通过df文件载入image和targets，目标检测的数据集载入可参考issue
-- evaluate.py：计算Iou和Map等指标
-- train.py：模型载入和训练代码
+- evaluate.py：评估计算Iou和Map等指标
+- train.py：训练代码
 - WheaTesttData.py：载入测试数据
-- predict.py：载入训练模型进行预测，保存画出矩形框的图像
+- predict.py：加载训练模型进行预测，并保存画出矩形框的图像
 
 #### 2. 预测结果及问题
 - 选取三种进行可视化描画矩形box，如下截图：
@@ -73,12 +73,13 @@
 
  
 - 进行了探索性数据分析，发现图片存在下面三个问题：
-    - 训练集与测试集图片分布差异大。训练集是来自欧洲和澳洲的小麦图片，而测试集是来自于日本的小麦图片，小麦的颜色，形状，大小存在很大的差异。- 小麦存在很多的重叠区域，这就导致检测框过程中位于重叠部分后方的小麦很难被检测出来。
+    - 训练集与测试集图片分布差异大。训练集是来自欧洲和澳洲的小麦图片，而测试集是来自于日本的小麦图片，小麦的颜色，形状，大小存在很大的差异。
+    - 小麦存在很多的重叠区域，这就导致检测框过程中位于重叠部分后方的小麦很难被检测出来。
     - 由于拍摄时风的扰动，小麦整体成像质量不高。
 -  针对分布差异大的问题，想到了两个解决方法：
     - 第一让模型在训练过程中每一个batch能够训练多个来自不同地区的小麦，这样模型学到的更具有泛化性
     - 第二个是在提交阶段使用伪标签的方式，将置信度高于0.9的预测框作为真实框与测试集一起放入训练集中重新进行训练，这样模型就可以学习到来自于日本的图片。
--  针对重叠部分，我使用的是mixup数据增强，将来自于同一区域小麦图片融合，同时讲预测框堆叠，这样能产生更多接近于真实的重叠图片，同时在后处理时使用的是soft-nms进行处理，能够减少重叠预测框的丢失。针对扰动问题，使用albumentation数据增强方式进行数据增强。
+-  针对重叠部分，我使用的是mixup数据增强，将来自于同一区域小麦图片融合，同时将预测框堆叠，这样能产生更多接近于真实的重叠图片，同时在后处理时使用的是soft-nms进行处理，能够减少重叠预测框的丢失。针对扰动问题，使用albumentation数据增强方式进行数据增强。
 -  最后确定在yolov5和efficientdet模型，但是由于licence的问题，yolov5在比赛中不能使用，于是选择了efficientdetd6作为最终模型
 -  在产生数据集阶段利用albumentation库进行heavy 数据增强，并使用cutmix融合更多来自不同地区的小麦照片，并用mixup产生更多重叠照片。
 -  在训练阶段使用交叉验证的方法将数据集分成五折，在adms优化器在余弦退火的学习率更新方式下进行训练后，得到的模型使用soft-nms进行后处理。
