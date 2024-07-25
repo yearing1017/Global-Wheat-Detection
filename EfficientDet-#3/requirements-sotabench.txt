@@ -1,4 +1,4 @@
-torch==1.4.0
+torch==2.2.0
 timm==0.1.26
 torchvision==0.5
 pycocotools>=2.0.0
